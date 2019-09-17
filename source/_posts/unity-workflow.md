@@ -3,7 +3,7 @@ layout: post
 title: UUG分享 workflow
 date: 2017/1/4
 tags: [Unity,UUG]
-thumbnail: /images/teaser/uug_workflow.png
+thumbnail: /images/teaser/uug_workflow.jpg
 toc: false
 ---
 
@@ -11,4 +11,4 @@ toc: false
 
 <!--more-->
 
-放一下当时的[slides](/downloads/unity_workflow.pptx)，里面主要是我最近一年关于工作流的一些思考。
+放一下当时的[slides](https://github.com/qiankanglai/blog/raw/master/raw/unity_workflow.pptx)，里面主要是我最近一年关于工作流的一些思考。

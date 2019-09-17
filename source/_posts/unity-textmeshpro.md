@@ -3,7 +3,7 @@ layout: post
 title: UUG分享 TextMesh Pro
 date: 2017/3/1
 tags: [Unity,UUG]
-thumbnail: /images/teaser/uug_textmeshpro.png
+thumbnail: /images/teaser/uug_textmeshpro.jpg
 toc: false
 ---
 
@@ -11,4 +11,4 @@ toc: false
 
 <!--more-->
 
-这次我的[slides](/downloads/unity_textmeshpro.pptx)是关于TMP这个插件的。话说万万没想到GDC 2017官方直接宣布把TMP给收了，期待原生支持嘿嘿
+这次我的[slides](https://github.com/qiankanglai/blog/raw/master/raw/unity_textmeshpro.pptx)是关于TMP这个插件的。话说万万没想到GDC 2017官方直接宣布把TMP给收了，期待原生支持嘿嘿

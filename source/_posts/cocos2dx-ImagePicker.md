@@ -17,7 +17,7 @@ ps. I made a Pull Request to cocos before and it seems they don't need it. So I 
 
 | Android | iOS |
 |--------------------------------------------------------------------------|----------------------------------------------------------------------------|
-| {% qnimg imagepicker_android.png %} | {% qnimg imagepicker_ios.png %} |
+| ![](/images/imagepicker_android.jpg) | ![](/images/imagepicker_ios.jpg) |
 
 ### update 1
 
@@ -25,7 +25,7 @@ Improve codes with cocos2d-x 3.5, and add support to OSX
 
 | Win | OSX |
 |--------------------------------------------------------------------------|----------------------------------------------------------------------------|
-| {% qnimg imagepicker_win.jpg %} | {% qnimg imagepicker_osx.jpg %} |
+| ![](/images/imagepicker_win.jpg) | ![](/images/imagepicker_osx.jpg) |
 
 ### update 2
 

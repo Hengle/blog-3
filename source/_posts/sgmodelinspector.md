@@ -2,16 +2,16 @@
 title: 扩展Unity模型编辑器
 date: 2018-03-10 08:05:56
 tags: Unity
-thumbnail: /images/teaser/modelinspector.png
+thumbnail: /images/teaser/modelinspector.jpg
 ---
 
 又忙的好久没打理博客了...最近来回使用Unity/UE两个引擎，发现有个可视化UV/Normal的小功能不错，花了一晚上在Unity 5.6里面山寨了下:
 
 <!--more-->
 
-{% qnimg uemesheditor.jpg %}
+![](/images/uemesheditor.jpg)
 
-{% qnimg sgmodelinspector.png %}
+![](/images/sgmodelinspector.jpg)
 
 # DecoratorEditor
 

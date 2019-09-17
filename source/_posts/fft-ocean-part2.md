@@ -11,13 +11,13 @@ toc: false
 
 <!--more-->
 
-{% qnimg fft_part2.gif %}
+![](/images/fft_part2.gif)
 
 左边是CPU FFT，右边是将顶点信息Bake到贴图之后利用vertex texture fetch实现的版本。
 
 Shader参考了今年[Advances in Real-Time Rendering in Games](http://advances.realtimerendering.com/s2017/index.html)里的[Crest: Novel Ocean Rendering Techniques in an Open Source Framework](https://github.com/huwb/crest-oceanrender)实现。
 
-{% qnimg fft_bake.png %}
+![](/images/fft_bake.jpg)
 
 从这张图其实就能看出来怎么做的，横坐标就是vertex id，纵坐标就是时间。具体的使用方式和嘉栋的代码一样：
 
@@ -34,7 +34,7 @@ v.normal = tex2Dlod(_NmlTex, uv).xyz;
 
 # 周期性
 
-从最原始的公式上来说，这玩意儿其实是不好做序列帧的因为没有准确的周期。但实际实现的时候$$\tilde{w(k)}=[[\frac{w(k)}{w_0}]]w_0$$也就是说$$\frac{2\pi}{w_0}$$一定是一个周期。
+从最原始的公式上来说，这玩意儿其实是不好做序列帧的因为没有准确的周期。但实际实现的时候$\tilde{w(k)}=[[\frac{w(k)}{w_0}]]w_0$也就是说$\frac{2\pi}{w_0}$一定是一个周期。
 
 这里还可以进一步优化，譬如找到这些角速度的最大公约数，来获得一个更小的周期。
 

@@ -2,14 +2,14 @@
 title: Unity试水Bent Normal
 date: 2018-07-16 12:44:39
 tags: [Unity]
-thumbnail: /images/teaser/bentnormal.png
+thumbnail: /images/teaser/bentnormal.jpg
 ---
 
 最近半年赶项目的事情一直很忙，好不容易上周末的时候有空做点渲染的东西玩，于是尝试了一下[Bent Normal Maps](https://docs.unrealengine.com/en-us/Engine/Rendering/LightingAndShadows/BentNormalMaps)。
 
 这是UE 4.17发布的功能之一，可以拿来解决间接光照漏光；工具部分Substaince Designer已经支持[利用高模烘焙Bent Normal](https://support.allegorithmic.com/documentation/display/SDDOC/Bent+Normals+from+mesh)。效果图对比来自UE4文档：
 
-{% qnimg bentnormal_ue4.png %}
+![](/images/bentnormal_ue4.jpg)
 
 <!--more-->
 
@@ -21,7 +21,7 @@ thumbnail: /images/teaser/bentnormal.png
 
 游戏里的低模带上法线代表的是高模的法线，但是这里其实没有考虑周围Mesh的遮蔽影响。如果间接光照直接使用普通法线，就可能出现『暗部漏光』的现象。
 
-{% qnimg bentnormal_algorithm.jpg %}
+![](/images/bentnormal_algorithm.jpg)
 
 偷懒的童鞋可以参考一份中文介绍 [Bent Normal (环境法线?)](https://blog.csdn.net/BugRunner/article/details/7272902)。
 
@@ -33,7 +33,7 @@ GPU Gems里提到的是*This method is based on a view-independent preprocess th
 
 - 生成一个球状平行光分布(真正烘焙的时候会比这个密很多)
 
-{% qnimg bentnormal_lights.png %}
+![](/images/bentnormal_lights.jpg)
 
 - 每次从不同角度渲染物体，利用Shadow Map可以得到每个像素可见性。有几个需要注意的地方：
   - 输出到2UV(这个技巧可以参考之前博客 {% post_link sgmodelinspector %})，记得关掉Cull/ZTest等；
@@ -41,7 +41,7 @@ GPU Gems里提到的是*This method is based on a view-independent preprocess th
   - 不要用Screen Space Shadow；
   - 注意相机位置、模型大小，让Shadow Map利用率最高；
 
-{% qnimg bentnormal_uv2.png %}
+![](/images/bentnormal_uv2.jpg)
 
 ps. 我一开始是使用`Graphics.DrawMeshNow`直接绘制到RenderTexture的，后来发现很多变量引擎不会自动传过去特别闹心... 最后换了个路子，直接设置`Camera.targetTexture`然后`Camera.Render`省心多了。
 
@@ -53,7 +53,7 @@ ps. 我一开始是使用`Graphics.DrawMeshNow`直接绘制到RenderTexture的�
 
 和SD出的图比了下，只能说方向上没问题，但是还有不少细节差距很大(人家毕竟商业软件，我整这个加起来不超过3h，逃) 
 
-{% qnimg bentnormal_compare.jpg %}
+![](/images/bentnormal_compare.jpg)
 
 - 有些奇怪的噪声来自于采样严重不足；
 - 严重怀疑Substaince Designer做了一些图像空间的操作，因为它生成的BentNormal有些地方根本没有2UV对应也有值，这就很有意思了；
@@ -61,7 +61,7 @@ ps. 我一开始是使用`Graphics.DrawMeshNow`直接绘制到RenderTexture的�
 
 不过好处也是有的：Substaince Designer导出的是normalized Bent Normal；我自己生成的时候B通道拿来存了AO Strength，还可以当成Mesh AO使用。另外就是在Unity里烘焙确实流程简单+迭代起来快。 放在自己项目里比较了下背光时候Diffuse IBL部分的效果(暂时只用了天光地光)，因为法线平滑了很多所以漏光好了很多：
 
-{% qnimg bentnormal_result.png %}
+![](/images/bentnormal_result.jpg)
 
 # 未来工作
 
@@ -73,7 +73,7 @@ SD/SP/Max等美术DCC工具最大问题是public API不是很多，如果想定�
 
 顺便po一张图：三个面光源下，Max里Vray烘焙到贴图和Unity里Enlighten烘焙到贴图的对比，看上去还是比较有搞头的(左边模型鞋子/腰带上的问题其实是Max里哪里出错了，然而我对这货不熟-.-)
 
-{% qnimg vray_enlighten.jpg %}
+![](/images/vray_enlighten.jpg)
 
 这样最大的好处是提高定制性和整合工作流顺畅度(虽然目前来看鸽的概率太大了)。 
 

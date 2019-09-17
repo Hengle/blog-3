@@ -10,7 +10,7 @@ toc: false
 
 <!--more-->
 
-{% qnimg fillrate_profiler.png %}
+![](/images/fillrate_profiler.jpg)
 
 看到这个现象的第一反应当然是查vertices/trianges以及batch：
 
